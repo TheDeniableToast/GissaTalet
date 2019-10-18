@@ -5,12 +5,26 @@ public class GissaTalet {
 
     public static void main(String[] args) {
 
-    Random rand = new Random();
+        //Obtain number between 1-100
+        int n = (int)(Math.random() * 11);
+        int m = 1;
+        //Variables
+        String s = JOptionPane.showInputDialog(null, "Skriv ett nummer");
+        int k = Integer.parseInt(s);
 
-    //Obtain number between 0-100
-        int n = rand.nextInt(100);
-        n += 1;
+        while (k != n) {
 
-       JOptionPane.showMessageDialog(null, n);
+            s = JOptionPane.showInputDialog(null, "Skriv ett nummer");
+            k = Integer.parseInt(s);
+
+            if (k != n) {
+                m = m + 1;
+            }
+
+            if (k == n) {
+                m = m - 1;
+                JOptionPane.showMessageDialog(null, "You guessed right! Amount of tries:" + m);
+            }
         }
+    }
         }
